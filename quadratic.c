@@ -15,7 +15,7 @@ positive(a, b, c)
      double b;
      double c;
 {
-  printf("%f\n", (double)(-b - sqrt((b * b) - (4 * a * c))) / (2 * a));
+  printf("%f\n", (double)(-b - sqrt((b * b) - (4.0 * a * c))) / (2 * a));
 }
 
 void
@@ -45,21 +45,24 @@ int main(void)
     fprintf(stderr, "malloc did not work\n");
     return 1; /* malloc failed*/
   } else {
+    const char prompt[18] = { 'E', 'n', 't', 'e', 'r', ' ', 'a', ' ', 'v', 'a', 'l', 'u', 'e', ' ', 'f', 'o', 'r', '\0' };
     char ch = 0;
-    //  while((ch = getchar()) != '\n') {
-    //    first
+    printf("%s A: ", prompt);
+    fflush(stdout);
     for(int i = 0; (ch = getchar()) != '\n'; i += 2) {
       *(first + i--) = ch;
     }
-    
+
     ch = '\n';
-    
+    printf("%s B: ", prompt);
+    fflush(stdout);
     for(int i = 0; (ch = getchar()) != '\n'; i += 2) {
       *(second + i--) = ch;
     }
     
     ch = '\n';
-    
+    printf("%s c: ", prompt);
+    fflush(stdout);
     for(int i = 0; (ch = getchar()) != '\n'; i += 2) {
       *(third + i--) = ch;
     }
@@ -68,12 +71,6 @@ int main(void)
     
     
     // if the user did me a wrong, fail
-    /*
-    values.a = atod(first);
-    values.b = atod(second);
-    values.c = atod(third);
-    */
-
     sscanf(first, "%lf", &values.a);
     sscanf(second, "%lf", &values.b);
     sscanf(third, "%lf", &values.c);
