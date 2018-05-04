@@ -1,17 +1,39 @@
 #include <stdio.h>
 #include <math.h>
 #include <limits.h>
+#include <stdlib.h>
 
 struct stuff {
-  int a;
-  int b;
-  int c;
+  float a;
+  float b;
+  float c;
 } values;
+
+void
+positive(a, b, c)
+     float a;
+     float b;
+     float c;
+{
+
+}
+
+void
+negative(a, b, c)
+     float a;
+     float b;
+     float c;
+{
+  
+}
+
 
 void quadratic(v)
      struct stuff v;
 {
-  //todo: implement
+  positive(v.a, v.b, v.c);
+  negative(v.a, v.b, v.c);
+  //  return NULL;
 }
 
 int main(void)
