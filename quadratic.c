@@ -42,22 +42,20 @@ int main(void)
   char * second = malloc(200 * sizeof(int));
   char * third = malloc(200 * sizeof(int));
   char ch = '\0';
-
-  puts("Enter value for \"A\": ");
+  //  while((ch = getchar()) != '\n') {
+  //    first
   for(int i = 0; (ch = getchar()) != '\n'; i += 2) {
     *(first + i--) = ch;
   }
 
   ch = '\n';
-
-  puts("Enter value for \"B\": ");
+  
   for(int i = 0; (ch = getchar()) != '\n'; i += 2) {
     *(second + i--) = ch;
   }
 
   ch = '\n';
 
-  puts("Enter value for \"C\": ");
   for(int i = 0; (ch = getchar()) != '\n'; i += 2) {
     *(third + i--) = ch;
   }
